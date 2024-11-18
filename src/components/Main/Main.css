@@ -1,156 +1,191 @@
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
+/* Main.css */
 .main {
-    flex: 1;
-    /* padding-bottom: 15vh; */
-    position: relative;
-    overflow-y: auto;
-}
-
-.main .nav {
-    position: sticky;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 22px;
-    padding: 20px;
-    color: #585858;
-    background-color: #f0f0f0;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-.nav p {
-    margin: 0;
-}
-
-.nav img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; 
+  overflow-y: hidden;
+  background-color: #000000;
+  color: #ffffff;
+  width: 100%;
 }
 
 .main-container {
-    max-width: 900px;
-    margin: auto;
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto; 
+}
+
+.navbar {
+  background-color: #2c2c2c;
 }
 
 .greet {
-    margin: 20px 0px;
-    font-size: 40px;
-    color: #c4c7c5;
-    font-weight: 500;
-    padding: 10px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.5rem;
 }
 
-.main .greet span {
-    background: -webkit-linear-gradient(16deg, #4b90ff, #ff5546);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.greet span {
+  background: linear-gradient(16deg, #4b90ff, #ff5546);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.main .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 10px;
-    padding: 10px;
-}
-
-.main .cards .card {
-    height: 150px;
-    padding: 15px;
-    background-color: #f0f4f0;
-    border-radius: 10px;
-    position: relative;
-    cursor: pointer;
-}
-
-.main .cards .card:hover {
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transform: translateY(-5px);
-    transition: all 0.3s ease-in-out;
-    background-color: #dfe4ea;
-}
-
-.main .cards .card img {
-    width: 35px;
-    padding: 5px;
-    position: absolute;
-    background-color: white;
-    border-radius: 20px;
-    bottom: 10px;
-    right: 10px;
-}
-
-.main .card p {
-    color: #585858;
-    font-size: 17px;
+.loading img {
+  width: 200px; 
 }
 
 .main-bottom {
-    display: flex;
-    justify-content: center;
-    padding: 10px;
+  background-color: #2c2c2c;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .search-box {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 600px;
-    background-color: white;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
 }
 
 .search-box input {
-    flex: 1;
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-    outline: none;
-    font-size: 16px;
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
 }
 
-.search-box div img {
-    width: 30px;
-    height: 30px;
-    margin-left: 10px;
-    cursor: pointer;
+.search-box img {
+  width: 30px;
+  cursor: pointer;
 }
 
 .footer {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 14px;
-    color: #585858;
+  text-align: center;
+  padding: 10px;
+  background-color: #2c2c2c;
+  color: #ffffff;
 }
 
 .footer a {
-    margin: 0 10px;
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
+  color: #ffffff;
+  margin: 0 10px;
+  text-decoration: none;
 }
 
-.footer a:hover {
-    text-decoration: underline;
+.upload-icon {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  cursor: pointer;
+  filter: drop-shadow(0 0 3px #fff);
 }
 
-@media (max-width: 768px) {
-    .main-bottom {
-        flex-direction: column;
-        align-items: center;
-    }
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 20px;
+  gap: 8px; 
+  overflow-y: hidden;
+  height: 350px;
 }
 
-@media (max-width: 576px) {
-    .main-bottom {
-        padding: 10px;
-    }
+.message-bubble {
+  width: 100%;
+  background-color: rgba(33, 33, 33, .9);
+  color: #ffffff;
+  padding: 10px 25px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 8px rgba(17, 17, 217, 0.518);
+  /* line-height: 1.6;  */
+  animation: fadeIn 0.3s ease; 
+  font-size: large;
+}
+
+.user-message {
+  font-size: large;
+  padding: 10px 25px;
+
+  align-self: flex-end; 
+}
+
+.user-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  color: #faf4f4;
+}
+
+.user-input input {
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+}
+
+.user-input img {
+  width: 30px;
+}
+
+.result-text {
+  margin: 0;
+  white-space: pre-wrap; 
+}
+
+
+.copy-icon {
+  font-size: 1.2rem;
+  color: #fafafa;
+  transition: color 0.3s;
+}
+
+.copy-icon:hover {
+  color: #0056b3;
+}
+
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  position: absolute;
+  top : 50%; left: 50%;
+  width: 100px;
+  aspect-ratio: 1;
+   --c: linear-gradient(#210af4 0 0);
+   --m: radial-gradient(farthest-side,#f40606 92%,#dc1c1ce6);
+  background: 
+    var(--c),var(--m),
+    var(--c),var(--m), 
+    var(--c),var(--m);
+  background-size: 8px 12px,8px 8px;
+  background-repeat: no-repeat;
+  animation: l16 1s infinite linear alternate;
+}
+@keyframes l16 {
+  0%,5%   {background-position: 0 50%             ,0 0               ,50% 50%             ,50% 0               ,100% 50%             ,100% 0}
+  16.67%  {background-position: 0 50%             ,0 calc(50% - 10px),50% 50%             ,50% 0               ,100% 50%             ,100% 0}
+  33.33%  {background-position: 0 calc(50% + 10px),0 50%             ,50% 50%             ,50% 0               ,100% 50%             ,100% 0}
+  50%     {background-position: 0 calc(50% + 10px),0 50%             ,50% 50%             ,50% calc(50% - 10px),100% 50%             ,100% 0}
+  66.67%  {background-position: 0 calc(50% + 10px),0 50%             ,50% calc(50% + 10px),50% 50%             ,100% 50%             ,100% 0}
+  83.33%  {background-position: 0 calc(50% + 10px),0 50%             ,50% calc(50% + 10px),50% 50%             ,100% 50%             ,100% calc(50% - 10px)}
+  95%,100%{background-position: 0 calc(50% + 10px),0 50%             ,50% calc(50% + 10px),50% 50%             ,100% calc(50% + 10px),100% 50%}
 }
